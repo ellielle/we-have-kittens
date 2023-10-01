@@ -1,7 +1,9 @@
 <script>
   import { onMount } from "svelte";
   // @ts-ignore # Cannot find module error
-  import { Meow1, Meow2, Meow3 } from "$lib/ktities";
+  import MomInfo from "$lib/components/MomInfo.svelte";
+  import Carousel from "$lib/components/Carousel.svelte";
+  import { Group, Group2 } from "$lib/ktities";
   import { fly } from "svelte/transition";
   import "../app.css";
   let loaded = false;
@@ -11,28 +13,28 @@
   });
 </script>
 
-<main class="flex flex-col place-items-center">
+<main data-theme="dark" class="flex flex-col place-items-center bg-base-300">
   {#if loaded}
     <h1 transition:fly={{ y: 100, duration: 2000, opacity: 0 }} class="mt-8 text-3xl text-center">
       We have kittens!
     </h1>
-  {/if}
 
-  {#if loaded}
-    <div transition:fly={{ y: 100, duration: 2000, opacity: 0, delay: 300 }} class="mt-4">
-      <img src={Meow1} alt="A bunch of kittens!" class="rounded-box" />
-    </div>
-  {/if}
+    <MomInfo />
 
-  {#if loaded}
-    <div transition:fly={{ y: 100, duration: 2000, opacity: 0, delay: 700 }} class="mt-4">
-      <img src={Meow2} alt="A bunch of kittens!" class="rounded-box" />
-    </div>
-  {/if}
+    <div
+      class="card-body bg-base-200 rounded-box shadow-md"
+      transition:fly={{ y: 100, duration: 2000, opacity: 0, delay: 400 }}
+    >
+      <div transition:fly={{ y: 100, duration: 2000, opacity: 0, delay: 600 }} class="card mt-4">
+        <img src={Group} alt="A bunch of kittens!" class="rounded-box shadow-md" />
+      </div>
 
-  {#if loaded}
-    <div transition:fly={{ y: 100, duration: 2000, opacity: 0, delay: 1200 }} class="mt-4">
-      <img src={Meow3} alt="A bunch of kittens!" class="rounded-box" />
+      <div transition:fly={{ y: 100, duration: 2000, opacity: 0, delay: 600 }} class="mt-4">
+        <img src={Group2} alt="A bunch of kittens!" class="rounded-box shadow-md" />
+      </div>
     </div>
+
+    <Carousel />
   {/if}
+  <div class="mt-4" />
 </main>
