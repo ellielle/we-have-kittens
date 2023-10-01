@@ -1,9 +1,9 @@
 <script>
   import { onMount } from "svelte";
   // @ts-ignore # Cannot find module error
-  import MomInfo from "$lib/components/MomInfo.svelte";
+  import MomInfo from "$lib/components/CatInfo.svelte";
   import Carousel from "$lib/components/Carousel.svelte";
-  import { Group, Group2 } from "$lib/ktities";
+  import { cats } from "$lib/ktities";
   import { fly } from "svelte/transition";
   import "../app.css";
   let loaded = false;
@@ -13,10 +13,10 @@
   });
 </script>
 
-<main data-theme="dark" class="flex flex-col place-items-center bg-base-300">
+<main data-theme="dark" class="flex flex-col place-items-center mx-auto max-w-[1280px] bg-base-300">
   {#if loaded}
     <h1 transition:fly={{ y: 100, duration: 2000, opacity: 0 }} class="mt-8 text-3xl text-center">
-      We have kittens!
+      The Quality Lab has kittens!
     </h1>
 
     <MomInfo />
@@ -26,11 +26,11 @@
       transition:fly={{ y: 100, duration: 2000, opacity: 0, delay: 400 }}
     >
       <div transition:fly={{ y: 100, duration: 2000, opacity: 0, delay: 600 }} class="card mt-4">
-        <img src={Group} alt="A bunch of kittens!" class="rounded-box shadow-md" />
+        <img src={cats[0]} alt="A bunch of kittens!" class="rounded-box shadow-md" />
       </div>
 
       <div transition:fly={{ y: 100, duration: 2000, opacity: 0, delay: 600 }} class="mt-4">
-        <img src={Group2} alt="A bunch of kittens!" class="rounded-box shadow-md" />
+        <img src={cats[1]} alt="A bunch of kittens!" class="rounded-box shadow-md" />
       </div>
     </div>
 

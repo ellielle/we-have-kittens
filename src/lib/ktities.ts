@@ -14,5 +14,15 @@ import Dragon2 from "$lib/assets/images/white2.jpg?w=250&h=250&format=webp";
 import Orange from "$lib/assets/images/orange.jpg?w=250&h=250&format=webp";
 // @ts-expect-error Cannot find module
 import Orange2 from "$lib/assets/images/orange2.jpg?w=250&h=250&format=webp";
+const cats = [
+  Group,
+  Group2,
+  Tux,
+  Tux2,
+  Dragon,
+  Dragon2,
+  Orange,
+  Orange2,
+];
 
-export { Group, Group2, Tux, Tux2, Dragon, Dragon2, Orange, Orange2 };
+export { cats };
