@@ -2,7 +2,7 @@
   import { fly } from "svelte/transition";
 </script>
 
-<section transition:fly={{ y: 100, duration: 2000, opacity: 0, delay: 200 }}>
+<section transition:fly={{ y: 50, duration: 2000, opacity: 0, delay: 200 }}>
   <!-- svelte-ignore a11y-no-noninteractive-tabindex -->
   <div tabindex="0" class="collapse collapse-arrow text-center">
     <div class="collapse-title text-xl px-0">More Information</div>
