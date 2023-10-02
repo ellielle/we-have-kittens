@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { onMount } from "svelte";
   // @ts-ignore # Cannot find module error
   import CatInfo from "$lib/components/CatInfo.svelte";
@@ -6,7 +6,15 @@
   import { cats } from "$lib/ktities";
   import { fly } from "svelte/transition";
   import "../app.css";
+  import Modal from "$lib/components/Modal.svelte";
   let loaded = false;
+  let showModal = false;
+  let image: string | null = null;
+
+  function handleKitten(event: CustomEvent) {
+    showModal = true;
+    image = event.detail;
+  }
 
   onMount(() => {
     loaded = true;
@@ -45,7 +53,12 @@
       Swipe down for more pictures!
     </p>
 
-    <Carousel />
+    <Carousel on:kitten={handleKitten} />
+    {#if image && showModal}
+      <Modal bind:showModal>
+        <img src={image} alt="A close-up kitten!" width="100%"/>
+      </Modal>
+    {/if}
   {/if}
   <div class="mt-4" />
 </main>
