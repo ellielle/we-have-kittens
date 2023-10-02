@@ -15,7 +15,7 @@
       <img
         src={image}
         alt="A kitten!"
-        class="rounded-box"
+        class="rounded-box cursor-pointer"
         on:click={() => dispatch("kitten", image)}
         on:keydown={() => dispatch("kitten", image)} />
     </div>

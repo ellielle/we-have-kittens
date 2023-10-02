@@ -60,5 +60,7 @@
       </Modal>
     {/if}
   {/if}
-  <div class="mt-4" />
+  <div class="mt-8 divider">
+    <p class="text-sm">Made with 🐈❤️</p>
+  </div>
 </main>
