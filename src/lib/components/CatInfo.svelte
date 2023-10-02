@@ -4,15 +4,25 @@
 
 <section transition:fly={{ y: 100, duration: 2000, opacity: 0, delay: 200 }}>
   <!-- svelte-ignore a11y-no-noninteractive-tabindex -->
-  <div tabindex="0" class="collapse">
-    <div class="collapse-title text-xl text-center">More Information</div>
+  <div tabindex="0" class="collapse collapse-arrow text-center">
+    <div class="collapse-title text-xl px-0">More Information</div>
     <div class="collapse-content">
       <ul>
-        <li class="text-red-500">
-          Mom has her shots and tested FIV & OTHER NASTY DISEASES Negative
+        <li class="text-orange-200">
+          <p>Mom has her shots and tested negative on her FeLV(leukemia)/FIV SNAP test.</p>
         </li>
-        <li>Only the white, orange tabby, and tuxedo kittens are available. All 3 are male.</li>
+        <li class="mt-2">
+          <p>
+            Only the white, orange tabby, and tuxedo kittens are available. All 3 of them are boys.
+          </p>
+        </li>
       </ul>
     </div>
   </div>
 </section>
+
+<style>
+  li {
+    list-style: disc;
+  }
+</style>
