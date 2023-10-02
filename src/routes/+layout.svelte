@@ -2,6 +2,6 @@
 
 <style>
   :global(body) {
-    @apply bg-base-300 h-[100vh];
+    @apply bg-base-300;
   }
 </style>
